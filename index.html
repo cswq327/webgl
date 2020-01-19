@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>webgl_01 draw triangle </title>
+<meta charset="utf-8">
+<script type="text/javascript">
+    var gl, canvas, shaderProgram, vertexBuffer;
+
+    function createGLContext( canvas ) {
+        var names = ["webgl", "experimental-webgl"];
+        var context= null;
+        for( var i = 0; i < names.length; ++i ) {
+            try {
+                context = canvas.getContext( name[i] );
+            } catch( e ) {
+            
+            }
+            if( context  )
+                break; 
+        }
+
+        if(  context ) {
+            context.viewportWidth = canvas.width;
+            context.viewprotHeight = canvas.height;
+        } else {
+            alert( 'fail to create webgl context' );
+        }
+    }
+    
+    function loadShader( type, shaderSource ) {
+        var shader = gl.createShader( type );
+        gl.shaderSource( shader, shaderSource );
+        gl.compileShader( shader );
+
+        if( gl.getShaderParameter( shader, gl.COMPILE_STATUS ) ) {
+            
+        }
+    }
+   
+</script>
+</head>
+<body>
+
+</body>
+
+
+</html>
